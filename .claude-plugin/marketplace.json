@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "custom-plugin",
+  "description": "오늘의 운세 → 카카오톡 나챗방 플러그인",
+  "owner": {
+    "name": "LeeTaetae",
+    "url": "https://github.com/LeeTaetae"
+  },
+  "plugins": [
+    {
+      "name": "daily-fortune",
+      "description": "오락용 오늘의 운세를 음양력·날씨 Open API 정보와 함께 만들어 카카오톡 나챗방으로 보냅니다.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

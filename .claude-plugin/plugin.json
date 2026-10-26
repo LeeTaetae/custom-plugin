@@ -1,0 +1,26 @@
+{
+  "name": "daily-fortune",
+  "description": "매일 아침 오락용 오늘의 운세를 만들어 카카오톡 나챗방(PlayMCP)으로 보냅니다. 한국천문연구원 음양력·기상청 날씨 Open API를 근거로 쓰고, 전송 직전 훅이 형식을 검사합니다.",
+  "version": "0.1.0",
+  "author": {
+    "name": "LeeTaetae",
+    "url": "https://github.com/LeeTaetae"
+  },
+  "license": "MIT",
+  "keywords": ["fortune", "saju", "kakao", "playmcp", "korea", "open-api"],
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__.*__KakaotalkChat-MemoChat",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/fortune-guard.js\"",
+            "timeout": 5,
+            "statusMessage": "운세 메시지 검사 중..."
+          }
+        ]
+      }
+    ]
+  }
+}
